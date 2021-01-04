@@ -26,6 +26,8 @@ namespace ImagePosts
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
+            //this service initializes the database and passes it to the context class to be used by the project
             services.AddDbContext<PostsContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("Posts")));
         }
 
@@ -51,6 +53,7 @@ namespace ImagePosts
 
             app.UseEndpoints(endpoints =>
             {
+                //you can change these routing endpoints to match your project
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
