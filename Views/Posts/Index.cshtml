@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ImagePosts.Models.ImageModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Posts</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+   
+   
+@foreach (var item in Model) {
+       
+            <tr>
+                <img src="data:image/png;base64,@item.Image" height="500px" width="500px" />
+                
+            </tr><br />
+            <tr>
+                @Html.DisplayFor(modelItem => item.Description)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.Date)
+            </tr>
+            <tr>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </tr><br />
+            <br />
+       
+}
+    
+</table>
