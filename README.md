@@ -1,7 +1,7 @@
 # ImagePosts
 Asp.Net Core project for uploading your images to the database
 
-# you will need a db engine prefferable MSSQL to test it 
+# you will need a db engine preferable MSSQL to test it 
 
 # Run
 
